@@ -6,6 +6,22 @@
     font-family: IBMbold;
     src: url(font/IBMPlexMono-Bold.ttf);
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 body {
     font-family: IBM;
     margin: 0;
@@ -61,9 +77,42 @@ html, body {
     width: 18px;
     height: 17px;
 }
-.naam:hover, .naam:focus {
+.naam:hover {
     background: #e7f1f6;
     cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 25px;
+    background-color: #f9f9f9;
+    min-width: 64px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 3px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content img {
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    vertical-align: center;
+}
+.dropdown-content p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+    height: 48px;
+}
+.dropdown-content p:hover {
+    background-color: rgba(0,0,0,.04);
+}
+.naam:hover .dropdown-content {
+    animation: fadeIn ease 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 .main-content {
     display: flex;
